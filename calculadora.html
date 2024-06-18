@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+    <script>
+        function botao() {
+            var numero1 = parseFloat(document.getElementById("numero1").value);
+            var operacao = (document.getElementById("operacao").value);
+            var numero2 = parseFloat(document.getElementById("numero2").value);
+            var resultado = parseFloat(document.getElementById("resultado").value);
+
+            if (operacao == "+") {
+                resultado = numero1 + numero2;
+            } else if (operacao == "-") {
+                resultado = numero1 - numero2;
+            } else if (operacao == "x") {
+                resultado = numero1 * numero2;
+            } else if (operacao == "/") {
+                resultado = numero1 / numero2;
+            } else {
+                document.getElementById("resultado").innerHTML = "Operação inválida!";
+                return;
+            } 
+            document.getElementById("resultado").innerHTML = "O resultado de " + numero1 + " " + operacao + " " + numero2 + " é " + resultado + ".";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>CALCULADORA</h1>
+    <div class="input">
+
+    <input type="number" id="numero1" placeholder="Digite um número">
+    <input type="text" id="operacao" placeholder="Digite uma operacao(+,-,x,/)">
+    <input type="number" id="numero2" placeholder="Digite outro número">
+    <button onclick="botao()">CALCULAR</button>
+    </div>
+
+    <div id="resultado"></div>
+</body>
+</html>
